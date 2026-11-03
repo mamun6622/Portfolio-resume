@@ -145,14 +145,30 @@ TECHNICAL SKILLS
           
           {/* Resume Document Header */}
           <header className="border-b-2 border-zinc-900 pb-5 mb-6">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-              <div>
-                <h1 className="text-3xl font-extrabold tracking-tight text-zinc-900">
-                  {PERSONAL_INFO.fullName}
-                </h1>
-                <p className="text-base font-semibold text-emerald-700 mt-0.5">
-                  {PERSONAL_INFO.title}
-                </p>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <img
+                  src={PERSONAL_INFO.avatarUrl}
+                  alt={PERSONAL_INFO.fullName}
+                  className="w-16 h-16 rounded-xl object-cover ring-2 ring-zinc-300 shadow-xs"
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    if (img.src !== PERSONAL_INFO.fallbackAvatarUrl) {
+                      img.src = PERSONAL_INFO.fallbackAvatarUrl;
+                    }
+                  }}
+                />
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900">
+                    {PERSONAL_INFO.fullName}
+                  </h1>
+                  <p className="text-sm sm:text-base font-semibold text-emerald-700 mt-0.5">
+                    {PERSONAL_INFO.title}
+                  </p>
+                  <p className="text-xs text-zinc-600 font-mono">
+                    Tongmyong University · Department of AI & Computer Engineering
+                  </p>
+                </div>
               </div>
 
               <div className="text-xs text-zinc-600 sm:text-right font-mono space-y-0.5">
@@ -182,7 +198,7 @@ TECHNICAL SKILLS
               Professional Summary
             </h2>
             <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
-              Software engineer currently studying and building at Tongmyong University in Busan, South Korea. Passionate about architecting high-performance web applications, resilient embedded AI hardware systems, and scalable cross-platform mobile apps. Proven leadership in hardware-software integration through the CLARO V1 project and web applications like Peak Pulse.
+              AI & Computer Engineering undergraduate student currently studying and building at Tongmyong University in Busan, South Korea. Passionate about architecting high-performance web applications, resilient embedded AI hardware systems, and scalable cross-platform mobile apps. Actively seeking software engineering internships, co-ops, and junior engineering opportunities to apply hands-on project experience in collaborative teams.
             </p>
           </section>
 
@@ -202,10 +218,10 @@ TECHNICAL SKILLS
                   </span>
                 </div>
                 <div className="text-xs text-zinc-700 italic">
-                  Undergraduate Studies in Computer Science, Embedded Artificial Intelligence & Robotics
+                  Bachelor of Science in AI & Computer Engineering (Undergraduate Student)
                 </div>
                 <p className="text-xs text-zinc-600 mt-1">
-                  Lead student engineer for campus AI initiatives. Coursework: Data Structures & Algorithms, Systems Programming, Computer Vision, Embedded Systems, and Modern Software Engineering.
+                  Active campus engineering leadership (CLARO speech robot lead developer). Academic coursework: Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Computer Vision, and Microcontroller Systems.
                 </p>
               </div>
             </div>

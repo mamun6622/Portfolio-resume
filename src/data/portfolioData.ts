@@ -3,17 +3,19 @@ import { Project, SkillCategory, ExperienceItem, GitHubRepo, GitHubUser } from '
 export const PERSONAL_INFO = {
   fullName: 'Md Mamun Mia',
   preferredName: 'Mamun',
-  title: 'Software Engineer & IoT / Full-Stack Builder',
-  tagline: 'Engineering robust web platforms, cross-platform mobile apps, and embedded voice AI hardware.',
-  bio: `I am a software engineer studying and building at Tongmyong University in Busan, South Korea. My work bridges full-stack modern web engineering (TypeScript, React, Node.js), mobile development (Flutter, Kotlin), and embedded AI systems (ESP32-S3, C++, FastAPI, Whisper ASR). I love crafting end-to-end systems from low-level audio hardware pipelines to responsive cloud-deployed web applications.`,
+  title: 'AI & Computer Engineering Student',
+  tagline: 'Undergraduate student at Tongmyong University building full-stack web platforms, mobile apps, and embedded voice AI hardware.',
+  bio: `I am an AI & Computer Engineering undergraduate student at Tongmyong University in Busan, South Korea. I actively apply classroom fundamentals to real-world software engineering—crafting full-stack web applications (TypeScript, React, Node.js), cross-platform mobile apps (Flutter, Kotlin), and embedded AI systems (ESP32-S3, C++, FastAPI, Whisper ASR). I love solving hands-on technical problems and am actively seeking internship and junior engineering opportunities.`,
   location: 'Busan, South Korea',
   institution: 'Tongmyong University',
+  department: 'Department of AI & Computer Engineering',
   email: 'mamun.green213@gmail.com',
   github: 'https://github.com/mamun6622',
   githubUsername: 'mamun6622',
   linkedin: 'https://www.linkedin.com/in/md-mamun-mia-70a84b406/',
-  avatarUrl: 'https://avatars.githubusercontent.com/u/240487190?v=4',
-  availability: 'Available for Software Engineering, Full-Stack, and Systems Roles',
+  avatarUrl: '/assets/aistudio/photo_53ead135.jpg',
+  fallbackAvatarUrl: 'https://avatars.githubusercontent.com/u/240487190?v=4',
+  availability: 'Seeking Internships & Entry-Level Engineering Roles',
   timezone: 'KST (UTC+9)',
 };
 
@@ -170,8 +172,25 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
+    id: 'edu-1',
+    role: 'B.S. in AI & Computer Engineering (Student)',
+    organization: 'Tongmyong University (동명대학교)',
+    location: 'Busan, South Korea',
+    period: '2024 – Present',
+    current: true,
+    type: 'Education',
+    description:
+      'Undergraduate academic program focusing on Artificial Intelligence, Computer Engineering, Embedded Robotics, and Software Systems.',
+    bulletPoints: [
+      'Active leadership in campus technical engineering projects and robotics prototypes.',
+      'Comprehensive coursework: Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Computer Vision, and Microcontroller Systems.',
+      'Collaborative international student community in Busan, South Korea.'
+    ],
+    skills: ['Algorithms', 'Data Structures', 'C++', 'Embedded AI', 'Robotics', 'Computer Vision']
+  },
+  {
     id: 'exp-1',
-    role: 'Lead Systems Developer & IoT Architect (CLARO Project)',
+    role: 'Student Project Lead & Systems Developer (CLARO Project)',
     organization: 'Tongmyong University Campus Tech Initiative',
     location: 'Busan, South Korea',
     period: '2025 – Present',
@@ -189,14 +208,14 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   },
   {
     id: 'exp-2',
-    role: 'Software Engineer & Full-Stack Web Developer',
-    organization: 'Independent Open-Source & Client Projects',
+    role: 'Full-Stack & Mobile Developer (Projects & Open-Source)',
+    organization: 'Independent Engineering & Academic Projects',
     location: 'Busan, South Korea / Remote',
     period: '2024 – Present',
     current: true,
     type: 'Engineering',
     description:
-      'Architecting and deploying end-to-end web applications and modern mobile solutions for fitness, e-commerce, and fintech.',
+      'Designing and deploying practical web applications and mobile solutions for fitness, e-commerce, and fintech.',
     bulletPoints: [
       'Engineered Peak Pulse (live on Vercel), a mountain discovery and runner workout tracker built with React 19 and Tailwind CSS.',
       'Developed NovaBnk, a digital banking application with wallet state management and clean fintech workflows.',
@@ -204,23 +223,6 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       'Applied modern software design patterns, TypeScript safety, and automated deployment pipelines.'
     ],
     skills: ['TypeScript', 'React', 'Flutter', 'Tailwind CSS', 'Vercel', 'REST APIs']
-  },
-  {
-    id: 'edu-1',
-    role: 'Undergraduate Degree Program',
-    organization: 'Tongmyong University (동명대학교)',
-    location: 'Busan, South Korea',
-    period: '2024 – Present',
-    current: true,
-    type: 'Education',
-    description:
-      'Academic studies focusing on Computer Science, Embedded Artificial Intelligence, Robotics, and Software Engineering.',
-    bulletPoints: [
-      'Active leadership in campus technical engineering projects and robotics prototypes.',
-      'Coursework spanning Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, and Embedded Systems.',
-      'Collaborative international student community in Busan, South Korea.'
-    ],
-    skills: ['Algorithms', 'Data Structures', 'C++', 'Embedded AI', 'Robotics', 'Computer Science']
   }
 ];
 

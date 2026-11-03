@@ -69,7 +69,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 alt={PERSONAL_INFO.fullName}
                 className="w-9 h-9 rounded-full object-cover ring-2 ring-emerald-500/30 group-hover:ring-emerald-500 transition-all duration-200"
                 onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
+                  const img = e.target as HTMLImageElement;
+                  if (img.src !== PERSONAL_INFO.fallbackAvatarUrl) {
+                    img.src = PERSONAL_INFO.fallbackAvatarUrl;
+                  }
                 }}
               />
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-zinc-950"></span>
@@ -79,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {PERSONAL_INFO.fullName}
               </span>
               <span className="hidden sm:block text-xs text-zinc-500 font-mono">
-                Software Engineer
+                AI & Computer Engineering Student
               </span>
             </div>
           </a>
