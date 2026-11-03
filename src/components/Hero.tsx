@@ -171,46 +171,66 @@ export const Hero: React.FC<HeroProps> = ({
 
           </div>
 
-          {/* Right Column: Visual Portrait & Profile Showcase */}
+          {/* Right Column: Visual Portrait & Profile Showcase (Full Uncropped Photo) */}
           <div className="lg:col-span-5">
-            <div className={`relative rounded-3xl border p-6 sm:p-7 backdrop-blur-sm shadow-xl transition-all ${
+            <div className={`relative rounded-3xl border p-4 sm:p-6 backdrop-blur-sm shadow-xl transition-all ${
               darkMode ? 'bg-zinc-900/70 border-zinc-800' : 'bg-white border-zinc-200'
             }`}>
               
-              {/* Photo Showcase Container */}
-              <div className="relative group overflow-hidden rounded-2xl mb-6 bg-zinc-950 border border-zinc-800">
-                <img
-                  src={PERSONAL_INFO.avatarUrl}
-                  alt={PERSONAL_INFO.fullName}
-                  className="w-full h-80 sm:h-96 object-cover object-top filter brightness-95 group-hover:scale-102 transition-transform duration-300"
-                  onError={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    if (img.src !== PERSONAL_INFO.fallbackAvatarUrl) {
-                      img.src = PERSONAL_INFO.fallbackAvatarUrl;
-                    }
-                  }}
-                />
+              {/* Photo Showcase Container - Shows FULL uncropped portrait */}
+              <div className={`relative group rounded-2xl mb-4 overflow-hidden border p-2 shadow-sm transition-all ${
+                darkMode ? 'bg-zinc-950/80 border-zinc-800/80' : 'bg-zinc-100/80 border-zinc-200'
+              }`}>
+                <div className="relative rounded-xl overflow-hidden bg-zinc-950/90 flex items-center justify-center">
+                  <img
+                    src={PERSONAL_INFO.avatarUrl}
+                    alt={PERSONAL_INFO.fullName}
+                    className="mx-[15px] pl-0 w-[500px] max-w-full h-[550px] object-cover object-top rounded-lg transition-transform duration-300 group-hover:scale-[1.01]"
+                    style={{
+                      marginLeft: '15px',
+                      marginRight: '15px',
+                      paddingLeft: '0px',
+                      width: '500px',
+                      height: '550px',
+                    }}
+                    onError={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      if (img.src !== PERSONAL_INFO.fallbackAvatarUrl) {
+                        img.src = PERSONAL_INFO.fallbackAvatarUrl;
+                      }
+                    }}
+                  />
 
-                {/* Subtle gradient overlay with name badge */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent p-5">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-white font-bold text-lg sm:text-xl">
-                        {PERSONAL_INFO.fullName}
-                      </div>
-                      <div className="text-emerald-400 text-xs font-mono">
-                        AI & Computer Engineering Undergraduate
-                      </div>
+                  {/* Clean status badge in corner */}
+                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-emerald-500/40 text-emerald-400 text-xs font-mono flex items-center gap-1.5 shadow-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>AI & CE Student</span>
+                  </div>
+                </div>
+
+                {/* Profile Information Bar BELOW Photo (Nothing obscuring the portrait) */}
+                <div className="pt-3 pb-1 px-2 flex items-center justify-between">
+                  <div>
+                    <div className={`font-bold text-base sm:text-lg ${darkMode ? 'text-zinc-100' : 'text-zinc-900'}`}>
+                      {PERSONAL_INFO.fullName}
                     </div>
-                    <div className="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-[11px] font-mono">
-                      Student
+                    <div className="text-xs text-zinc-500 font-mono mt-0.5">
+                      Tongmyong University · Busan, South Korea
                     </div>
                   </div>
+                  <a
+                    href={PERSONAL_INFO.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-mono text-emerald-500 hover:text-emerald-400 font-medium"
+                  >
+                    @{PERSONAL_INFO.githubUsername}
+                  </a>
                 </div>
               </div>
 
               {/* Academic & Project Details */}
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 <div className={`p-3 rounded-xl border transition-colors ${
                   darkMode ? 'bg-zinc-950/60 border-zinc-800' : 'bg-zinc-50 border-zinc-200'
                 }`}>
@@ -241,7 +261,7 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
 
               {/* Quick Contact Line */}
-              <div className="pt-4 mt-4 border-t border-zinc-800/40 flex items-center justify-between text-xs">
+              <div className="pt-3.5 mt-3 border-t border-zinc-800/40 flex items-center justify-between text-xs">
                 <span className="text-zinc-500 font-mono">Direct Contact:</span>
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}

@@ -12,8 +12,8 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ darkMode }) => {
   };
 
   return (
-    <section id="resume" className="py-12 border-t border-zinc-800/20 dark:border-zinc-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section id="resume" className="py-16 md:py-24 border-t border-zinc-800/20 dark:border-zinc-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with Print action */}
         <div className="flex items-center justify-between mb-8">
