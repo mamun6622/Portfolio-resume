@@ -14,15 +14,15 @@ import {
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavbarProps {
-  onOpenResume: () => void;
-  onOpenTerminal: () => void;
+  onOpenResume?: () => void;
+  onOpenTerminal?: () => void;
   darkMode: boolean;
   setDarkMode: (val: boolean) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
-  onOpenResume, 
-  onOpenTerminal, 
+  onOpenResume = () => {}, 
+  onOpenTerminal = () => {}, 
   darkMode, 
   setDarkMode 
 }) => {

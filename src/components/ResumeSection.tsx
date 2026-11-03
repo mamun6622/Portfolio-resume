@@ -1,6 +1,6 @@
 import React from 'react';
 import { Printer, GraduationCap, Code2, FolderGit2 } from 'lucide-react';
-import { PERSONAL_INFO, PROJECTS, SKILLS } from '../data/portfolioData';
+import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES } from '../data/portfolioData';
 
 interface ResumeSectionProps {
   darkMode: boolean;
@@ -70,7 +70,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ darkMode }) => {
                 <span className="text-xs text-zinc-500 font-mono">Busan, South Korea</span>
               </div>
               <p className="text-xs text-zinc-500">
-                Undergraduate Studies in Computer Science & Engineering
+                Bachelor of Science in AI & Computer Engineering (Student, 2024 – Present)
               </p>
             </div>
           </div>
@@ -83,18 +83,18 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ darkMode }) => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              {SKILLS.map((skillGroup) => (
+              {SKILL_CATEGORIES.map((skillGroup) => (
                 <div 
-                  key={skillGroup.category}
+                  key={skillGroup.title}
                   className={`p-3 rounded-lg border ${
                     darkMode ? 'bg-zinc-950/40 border-zinc-800/80' : 'bg-zinc-50 border-zinc-200/80'
                   }`}
                 >
                   <div className="font-semibold text-zinc-400 mb-1 font-mono text-[11px]">
-                    {skillGroup.category}
+                    {skillGroup.title}
                   </div>
                   <div className={darkMode ? 'text-zinc-300' : 'text-zinc-700'}>
-                    {skillGroup.items.join(' · ')}
+                    {skillGroup.skills.map(s => s.name).join(' · ')}
                   </div>
                 </div>
               ))}
@@ -116,14 +116,14 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ darkMode }) => {
                       {proj.title}
                     </span>
                     <span className="text-zinc-500 font-mono text-[11px]">
-                      {proj.language}
+                      {proj.category}
                     </span>
                   </div>
                   <p className={darkMode ? 'text-zinc-400' : 'text-zinc-600'}>
                     {proj.description}
                   </p>
                   <div className="text-[11px] font-mono text-zinc-500 pt-0.5">
-                    Stack: {proj.tags.join(', ')}
+                    Stack: {proj.technologies.join(', ')}
                   </div>
                 </div>
               ))}

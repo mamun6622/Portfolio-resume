@@ -56,8 +56,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) =>
                   </h3>
 
                   <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-500">
-                    <span className={`w-2 h-2 rounded-full ${getLanguageColor(project.language)}`} />
-                    <span>{project.language}</span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span>{project.category}</span>
                   </div>
                 </div>
 
@@ -67,16 +67,16 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) =>
                   {project.description}
                 </p>
 
-                {/* Tags */}
+                {/* Technologies */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tags.map((tag) => (
+                  {project.technologies.map((tech) => (
                     <span
-                      key={tag}
+                      key={tech}
                       className={`text-[11px] font-mono px-2 py-0.5 rounded ${
                         darkMode ? 'bg-zinc-800 text-zinc-300' : 'bg-zinc-100 text-zinc-700'
                       }`}
                     >
-                      {tag}
+                      {tech}
                     </span>
                   ))}
                 </div>

@@ -16,11 +16,17 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroProps {
   darkMode: boolean;
-  onOpenResume: () => void;
-  onOpenTerminal: () => void;
+  onOpenResume?: () => void;
+  onOpenTerminal?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ darkMode, onOpenResume, onOpenTerminal }) => {
+export const Hero: React.FC<HeroProps> = ({ 
+  darkMode, 
+  onOpenResume = () => {
+    document.getElementById('resume')?.scrollIntoView({ behavior: 'smooth' });
+  }, 
+  onOpenTerminal = () => {} 
+}) => {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Subtle ambient background glow */}
